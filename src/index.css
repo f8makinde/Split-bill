@@ -56,7 +56,16 @@ body {
   font-size: 1.4rem;
   margin-bottom: 2rem;
 }
-
+@media only screen and (max-width: 800px) {
+  .app {
+    min-height: 66vh;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+  }
+  
+}
 .sidebar li {
   display: grid;
   grid-template-columns: 4.8rem 1fr auto;
