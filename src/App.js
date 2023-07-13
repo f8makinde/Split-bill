@@ -48,7 +48,7 @@ function handleSplitBill(value){
       {showAddFriend && <FormAddFriend showFriends={handleAddFriends}/>}
        <Button onClick={handleClick}>{showAddFriend ? 'Close' : 'Add friends'}</Button>
       </div>
-      {selectedFriend && <FormSplitBill onSplitBill={handleSplitBill}selectedFriend={selectedFriend}/>}
+      {selectedFriend && <FormSplitBill key={selectedFriend.id} onSplitBill={handleSplitBill}selectedFriend={selectedFriend}/>}
     </div>
   )
 }
@@ -135,7 +135,7 @@ function FormSplitBill({selectedFriend, onSplitBill}){
   }
 
   return(
-    <form className='form-split-bill' onSubmit={handleSubmit}>
+    <form className='form-split-bill' onSubmit={handleSubmit} >
       <h2>Split a bill with {selectedFriend.name}</h2>
       <label>Bill value</label>
     <input type='text' placeholder='number' value={bill} onChange={function (e) {
